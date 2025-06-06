@@ -1,0 +1,1 @@
+{"id":"nMDmqXlFvmetkRJbbVPty","name":"EmployeeRecord","appId":"gPpRIHcusVPBxaKCMoDqh","folderId":"cEaSIcNpioMUSfYUNCwkD","content":{"type":"json-schema","destination":"source","content":null,"name":"EmployeeRecord","schemaSource":"file","reference":"$ref://schema-registry/nMDmqXlFvmetkRJbbVPty"},"itemType":"appSchemas","gitEnabled":true}
