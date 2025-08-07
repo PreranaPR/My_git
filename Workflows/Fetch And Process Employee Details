@@ -1,0 +1,219 @@
+{
+  "id": "WrfdyeLQlXtJMNIQSQoYu",
+  "name": "Fetch And Process Employee Details",
+  "workflowName": "Fetch And Process Employee Details",
+  "itemType": "workflow",
+  "appId": "sulHupgOXHUXPBHtBZwDi",
+  "folderId": "EaSzIeZkjJJXkzupKalDs",
+  "type": "ORCHESTRATION",
+  "version": "0.0.1",
+  "steps": [
+    {
+      "id": "restservice_1",
+      "stepName": "RestService",
+      "stepType": "EVENT_SOURCE",
+      "icon": "",
+      "indicator": "",
+      "deletable": true,
+      "config": {
+        "activityGroup": "HTTP",
+        "activityName": "RESTService",
+        "description": "Invokes the workflow via a REST API.",
+        "input_activity": [],
+        "output_activities": [
+          "get_employees_1"
+        ],
+        "sourceSchemas": [],
+        "activityType": "EVENT_SOURCE",
+        "name": "RestService"
+      }
+    },
+    {
+      "id": "get_employees_1",
+      "stepName": "Get Employees",
+      "stepType": "SIMPLE",
+      "icon": "",
+      "indicator": "",
+      "deletable": true,
+      "config": {
+        "activityGroup": "Paycornext",
+        "activityName": "GetEmployees",
+        "description": "Gets employee information based on various criteria.",
+        "input_activity": [
+          "restservice_1"
+        ],
+        "output_activities": [
+          "process_employee_details_1"
+        ],
+        "activityType": "SIMPLE",
+        "sourceSchemas": [
+          "restservice_1"
+        ],
+        "name": "Get Employees"
+      }
+    },
+    {
+      "id": "process_employee_details_1",
+      "stepName": "Process Employee Details",
+      "stepType": "SIMPLE",
+      "icon": "",
+      "indicator": "",
+      "deletable": true,
+      "config": {
+        "activityGroup": "Paycornext",
+        "activityName": "CheckAndEnrichContext",
+        "description": "Checks and enriches application and client context, including Paycor API and New Relic logging.",
+        "input_activity": [
+          "get_employees_1"
+        ],
+        "output_activities": [
+          "end_1"
+        ],
+        "activityType": "SIMPLE",
+        "sourceSchemas": [
+          "restservice_1",
+          "get_employees_1"
+        ],
+        "name": "Process Employee Details"
+      }
+    },
+    {
+      "id": "end_1",
+      "stepName": "End",
+      "stepType": "END",
+      "icon": "",
+      "indicator": "",
+      "deletable": true,
+      "config": {
+        "activityGroup": "Common",
+        "activityName": "End",
+        "description": "Defines the end of the workflow execution.",
+        "sourceSchemas": [
+          "restservice_1",
+          "get_employees_1",
+          "process_employee_details_1"
+        ],
+        "input_activity": [
+          "process_employee_details_1"
+        ],
+        "output_activities": [],
+        "activityType": "END",
+        "name": "End"
+      }
+    }
+  ],
+  "transitions": [
+    {
+      "id": "transition-7225a2c4-4524-4659-a211-ff9d90de8bbb",
+      "from": "restservice_1",
+      "to": "get_employees_1",
+      "handleMap": {
+        "source": "restservice_1_2",
+        "target": "get_employees_1_1"
+      },
+      "name": "",
+      "description": "",
+      "type": "DEFAULT",
+      "lineType": "step",
+      "lineColor": "var(--color-gray-7)"
+    },
+    {
+      "id": "transition-77c79e64-58d1-4295-9e06-211db060a08c",
+      "from": "get_employees_1",
+      "to": "process_employee_details_1",
+      "handleMap": {
+        "source": "get_employees_1_2",
+        "target": "process_employee_details_1_1"
+      },
+      "name": "",
+      "description": "",
+      "type": "DEFAULT",
+      "lineType": "step",
+      "lineColor": "var(--color-gray-7)"
+    },
+    {
+      "id": "transition-a846e93b-e326-4f9d-baf7-8170c3eedda6",
+      "from": "process_employee_details_1",
+      "to": "end_1",
+      "handleMap": {
+        "source": "process_employee_details_1_2",
+        "target": "end_1_1"
+      },
+      "name": "",
+      "description": "",
+      "type": "DEFAULT",
+      "lineType": "step",
+      "lineColor": "var(--color-gray-7)"
+    }
+  ],
+  "diagram": {
+    "restservice_1": {
+      "x": 0,
+      "y": 100,
+      "handles": [
+        {
+          "id": "restservice_1_2",
+          "type": "source",
+          "position": "right"
+        }
+      ],
+      "sourcePosition": "right",
+      "targetPosition": null
+    },
+    "get_employees_1": {
+      "x": 150,
+      "y": 100,
+      "handles": [
+        {
+          "id": "get_employees_1_1",
+          "type": "target",
+          "position": "left"
+        },
+        {
+          "id": "get_employees_1_2",
+          "type": "source",
+          "position": "right"
+        }
+      ],
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    "process_employee_details_1": {
+      "x": 300,
+      "y": 100,
+      "handles": [
+        {
+          "id": "process_employee_details_1_1",
+          "type": "target",
+          "position": "left"
+        },
+        {
+          "id": "process_employee_details_1_2",
+          "type": "source",
+          "position": "right"
+        }
+      ],
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    "end_1": {
+      "x": 450,
+      "y": 100,
+      "handles": [
+        {
+          "id": "end_1_1",
+          "type": "target",
+          "position": "left"
+        }
+      ],
+      "sourcePosition": null,
+      "targetPosition": "left"
+    }
+  },
+  "mappings": {},
+  "notes": [],
+  "config": {
+    "name": "Fetch And Process Employee Details",
+    "description": "Generate a workflow to fetch all employee details and processes it"
+  }
+}
