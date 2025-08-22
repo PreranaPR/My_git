@@ -4,7 +4,7 @@
   "workflowName": "Mapping_workflow",
   "itemType": "workflow",
   "appId": "yKvmezRFjQwAkcaJQwjUQ",
-  "folderId": "ASUEcMGAneUAOMdcRizwj",
+  "folderId": "zqbxMvZNyVqMKVqDHXOOJ",
   "type": "ORCHESTRATION",
   "version": "0.0.1",
   "steps": [
@@ -22,8 +22,27 @@
         "activityType": "END",
         "name": "End",
         "sourceSchemas": [
-          "gtHmnDJVOKxaSAkUWaaAy",
-          "PLKiJlUvPHXbBfTZBauOm"
+          "PLKiJlUvPHXbBfTZBauOm",
+          "gtHmnDJVOKxaSAkUWaaAy"
+        ],
+        "targetSchema": "UhDvoOkxMZLCptgfpKSfT"
+      }
+    },
+    {
+      "id": "PLKiJlUvPHXbBfTZBauOm",
+      "stepName": "Response",
+      "stepType": "SIMPLE",
+      "icon": "",
+      "indicator": "",
+      "description": "",
+      "deletable": true,
+      "config": {
+        "activityName": "Response",
+        "activityGroup": "Common",
+        "activityType": "SIMPLE",
+        "name": "Response",
+        "sourceSchemas": [
+          "gtHmnDJVOKxaSAkUWaaAy"
         ],
         "targetSchema": "UhDvoOkxMZLCptgfpKSfT"
       }
@@ -55,25 +74,6 @@
         "pathParams": [],
         "showHttpFormSelectionPanel": false,
         "sourceSchemas": []
-      }
-    },
-    {
-      "id": "PLKiJlUvPHXbBfTZBauOm",
-      "stepName": "Response",
-      "stepType": "SIMPLE",
-      "icon": "",
-      "indicator": "",
-      "description": "",
-      "deletable": true,
-      "config": {
-        "activityName": "Response",
-        "activityGroup": "Common",
-        "activityType": "SIMPLE",
-        "name": "Response",
-        "sourceSchemas": [
-          "gtHmnDJVOKxaSAkUWaaAy"
-        ],
-        "targetSchema": "UhDvoOkxMZLCptgfpKSfT"
       }
     }
   ],
@@ -121,19 +121,6 @@
       "sourcePosition": null,
       "targetPosition": "left"
     },
-    "gtHmnDJVOKxaSAkUWaaAy": {
-      "x": 16,
-      "y": 48,
-      "handles": [
-        {
-          "type": "source",
-          "position": "right",
-          "id": "gtHmnDJVOKxaSAkUWaaAy_1"
-        }
-      ],
-      "sourcePosition": "right",
-      "targetPosition": null
-    },
     "PLKiJlUvPHXbBfTZBauOm": {
       "x": 240,
       "y": 48,
@@ -151,6 +138,19 @@
       ],
       "sourcePosition": "right",
       "targetPosition": "left"
+    },
+    "gtHmnDJVOKxaSAkUWaaAy": {
+      "x": 16,
+      "y": 48,
+      "handles": [
+        {
+          "type": "source",
+          "position": "right",
+          "id": "gtHmnDJVOKxaSAkUWaaAy_1"
+        }
+      ],
+      "sourcePosition": "right",
+      "targetPosition": null
     }
   },
   "mappings": {
