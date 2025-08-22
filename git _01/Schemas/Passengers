@@ -1,0 +1,16 @@
+{
+  "id": "UhDvoOkxMZLCptgfpKSfT",
+  "name": "Passengers",
+  "appId": "yKvmezRFjQwAkcaJQwjUQ",
+  "folderId": "QUTjQWYgSvrbyCyydtVCl",
+  "content": {
+    "type": "json-schema",
+    "destination": "source",
+    "content": null,
+    "name": "Passengers",
+    "schemaSource": "file",
+    "reference": "$ref://schema-registry/eXAnpUYRDHpQpkMNXQwCC"
+  },
+  "itemType": "appSchemas",
+  "gitEnabled": true
+}
