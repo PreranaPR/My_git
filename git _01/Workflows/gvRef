@@ -4,7 +4,7 @@
   "workflowName": "gvRef",
   "itemType": "workflow",
   "appId": "yKvmezRFjQwAkcaJQwjUQ",
-  "folderId": "DnDTfBuppnTIrljhbiFzQ",
+  "folderId": "BKrWvSwhhJaHEEnQxqybw",
   "type": "ORCHESTRATION",
   "version": "0.0.1",
   "steps": [
@@ -22,9 +22,11 @@
         "activityType": "END",
         "name": "End",
         "sourceSchemas": [
+          "vnCnoQmctPitOzcXMnxNg",
           "RxXLaYTjsmCohoWjWnsag"
         ],
-        "targetSchema": "UhDvoOkxMZLCptgfpKSfT"
+        "targetSchema": "UhDvoOkxMZLCptgfpKSfT",
+        "config.name": "End"
       }
     },
     {
@@ -68,17 +70,49 @@
         "pathParams": [],
         "output": "",
         "showHttpFormSelectionPanel": false,
-        "sourceSchemas": []
+        "sourceSchemas": [],
+        "config.name": "RESTService"
+      }
+    },
+    {
+      "id": "vnCnoQmctPitOzcXMnxNg",
+      "stepName": "Response",
+      "stepType": "SIMPLE",
+      "icon": "<svg width=\"37\" height=\"36\" viewBox=\"0 0 37 36\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n<path d=\"M21.9378 19.9571V15.5781L14.0781 23.2413L21.9378 30.9044V26.416C27.5518 26.416 31.4816 28.1676 34.2887 31.9992C33.1658 26.5255 29.7974 21.0518 21.9378 19.9571Z\" fill=\"#415FFF\"/>\n<path d=\"M8 13L16 13\" stroke=\"#415FFF\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/>\n <path d=\"M8 17H13\" stroke=\"#415FFF\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/>\n<path d=\"M14.1185 26.4181L9.02673 29.4737V25.6842H6.50041C5.49538 25.6842 4.53151 25.285 3.82085 24.5743C3.11018 23.8636 2.71094 22.8998 2.71094 21.8947V11.7895C2.71094 10.7844 3.11018 9.82058 3.82085 9.10991C4.53151 8.39925 5.49538 8 6.50041 8H21.6583C22.6633 8 23.6272 8.39925 24.3379 9.10991C25.0485 9.82058 25.4478 10.7844 25.4478 11.7895V18.1053\" fill=\"#415FFF\" fill-opacity=\"0.12\"/>\n <path d=\"M14.1185 26.4181L9.02673 29.4737V25.6842H6.50041C5.49538 25.6842 4.53151 25.285 3.82085 24.5743C3.11018 23.8636 2.71094 22.8998 2.71094 21.8947V11.7895C2.71094 10.7844 3.11018 9.82058 3.82085 9.10991C4.53151 8.39925 5.49538 8 6.50041 8H21.6583C22.6633 8 23.6272 8.39925 24.3379 9.10991C25.0485 9.82058 25.4478 10.7844 25.4478 11.7895V18.1053\" stroke=\"#415FFF\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/>\n</svg>\n",
+      "indicator": "",
+      "description": "",
+      "deletable": true,
+      "config": {
+        "activityType": "SIMPLE",
+        "activityGroup": "Common",
+        "activityName": "Response",
+        "showHttpFormSelectionPanel": false,
+        "name": "Response",
+        "config.name": "Response"
       }
     }
   ],
   "transitions": [
     {
-      "id": "initialEdge",
+      "id": "BHzDYTjqlCBQEUHpElTlO",
       "from": "RxXLaYTjsmCohoWjWnsag",
-      "to": "XQBpKUkhWuLAkNNUKYexd",
+      "to": "vnCnoQmctPitOzcXMnxNg",
       "handleMap": {
         "source": "RxXLaYTjsmCohoWjWnsag_1",
+        "target": "vnCnoQmctPitOzcXMnxNg_1"
+      },
+      "name": "",
+      "description": "",
+      "type": "DEFAULT",
+      "lineType": "step",
+      "lineColor": "#8c8c8c"
+    },
+    {
+      "id": "QzpxOsNUByazTlFFuBLqq",
+      "from": "vnCnoQmctPitOzcXMnxNg",
+      "to": "XQBpKUkhWuLAkNNUKYexd",
+      "handleMap": {
+        "source": "vnCnoQmctPitOzcXMnxNg_2",
         "target": "XQBpKUkhWuLAkNNUKYexd_1"
       },
       "name": "",
@@ -114,6 +148,24 @@
       ],
       "sourcePosition": "right",
       "targetPosition": null
+    },
+    "vnCnoQmctPitOzcXMnxNg": {
+      "x": 240,
+      "y": 48,
+      "handles": [
+        {
+          "type": "target",
+          "position": "left",
+          "id": "vnCnoQmctPitOzcXMnxNg_1"
+        },
+        {
+          "type": "source",
+          "position": "right",
+          "id": "vnCnoQmctPitOzcXMnxNg_2"
+        }
+      ],
+      "sourcePosition": "right",
+      "targetPosition": "left"
     }
   },
   "mappings": {
