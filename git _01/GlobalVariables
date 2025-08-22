@@ -1,0 +1,32 @@
+{
+  "GWlhvHOSftHUFkHBsLEzY": {
+    "id": "GWlhvHOSftHUFkHBsLEzY",
+    "name": "TestGVs",
+    "variables": [
+      {
+        "id": "aSeWdXrGwkbCDeyWmdLPG",
+        "type": "string",
+        "name": "first",
+        "enabled": true,
+        "defaultValue": "hello",
+        "scope": "Application",
+        "description": "",
+        "groupId": "nVUuAFZFmOuHpHtxkLeea",
+        "globalVariableType": ""
+      },
+      {
+        "id": "iWTVfLVZbudbQVVCQLmQA",
+        "type": "number",
+        "name": "second",
+        "enabled": true,
+        "defaultValue": "123",
+        "scope": "Application",
+        "description": "",
+        "groupId": "nVUuAFZFmOuHpHtxkLeea",
+        "globalVariableType": ""
+      }
+    ],
+    "appId": "yKvmezRFjQwAkcaJQwjUQ",
+    "gitEnabled": true
+  }
+}

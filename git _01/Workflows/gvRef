@@ -1,0 +1,147 @@
+{
+  "id": "bgHSFCZtHAOfFmESoBvVo",
+  "name": "gvRef",
+  "workflowName": "gvRef",
+  "itemType": "workflow",
+  "appId": "yKvmezRFjQwAkcaJQwjUQ",
+  "folderId": "DnDTfBuppnTIrljhbiFzQ",
+  "type": "ORCHESTRATION",
+  "version": "0.0.1",
+  "steps": [
+    {
+      "id": "XQBpKUkhWuLAkNNUKYexd",
+      "stepName": "End",
+      "stepType": "END",
+      "icon": "",
+      "indicator": "",
+      "description": "",
+      "deletable": true,
+      "config": {
+        "activityName": "End",
+        "activityGroup": "Common",
+        "activityType": "END",
+        "name": "End",
+        "sourceSchemas": [
+          "RxXLaYTjsmCohoWjWnsag"
+        ],
+        "targetSchema": "UhDvoOkxMZLCptgfpKSfT"
+      }
+    },
+    {
+      "id": "RxXLaYTjsmCohoWjWnsag",
+      "stepName": "RESTService",
+      "stepType": "EVENT_SOURCE",
+      "icon": "",
+      "indicator": "",
+      "description": "",
+      "deletable": true,
+      "config": {
+        "activityName": "RESTService",
+        "activityGroup": "HTTP",
+        "activityType": "EVENT_SOURCE",
+        "headers": [
+          {
+            "name": "testHeader",
+            "defaultValue": "$:{\"id\":{\"${TestGVs.first}\":\"nVUuAFZFmOuHpHtxkLeea/aSeWdXrGwkbCDeyWmdLPG\"},\"name\":\"${TestGVs.first}\"}",
+            "inRequest": true,
+            "inResponse": true,
+            "required": true
+          },
+          {
+            "name": "another",
+            "defaultValue": "$:{\"id\":{\"${TestGVs.second}\":\"nVUuAFZFmOuHpHtxkLeea/iWTVfLVZbudbQVVCQLmQA\"},\"name\":\"${TestGVs.second}\"}",
+            "inRequest": true,
+            "inResponse": true,
+            "required": true
+          }
+        ],
+        "name": "RESTService",
+        "description": "",
+        "path": "/test",
+        "method": [
+          "GET"
+        ],
+        "allowedMediaTypes": [
+          "application/json"
+        ],
+        "queryParams": [],
+        "pathParams": [],
+        "output": "",
+        "showHttpFormSelectionPanel": false,
+        "sourceSchemas": []
+      }
+    }
+  ],
+  "transitions": [
+    {
+      "id": "initialEdge",
+      "from": "RxXLaYTjsmCohoWjWnsag",
+      "to": "XQBpKUkhWuLAkNNUKYexd",
+      "handleMap": {
+        "source": "RxXLaYTjsmCohoWjWnsag_1",
+        "target": "XQBpKUkhWuLAkNNUKYexd_1"
+      },
+      "name": "",
+      "description": "",
+      "type": "DEFAULT",
+      "lineType": "step",
+      "lineColor": "#8c8c8c"
+    }
+  ],
+  "diagram": {
+    "XQBpKUkhWuLAkNNUKYexd": {
+      "x": 512,
+      "y": 48,
+      "handles": [
+        {
+          "type": "source",
+          "position": "left",
+          "id": "XQBpKUkhWuLAkNNUKYexd_1"
+        }
+      ],
+      "sourcePosition": null,
+      "targetPosition": "left"
+    },
+    "RxXLaYTjsmCohoWjWnsag": {
+      "x": 16,
+      "y": 48,
+      "handles": [
+        {
+          "type": "source",
+          "position": "right",
+          "id": "RxXLaYTjsmCohoWjWnsag_1"
+        }
+      ],
+      "sourcePosition": "right",
+      "targetPosition": null
+    }
+  },
+  "mappings": {
+    "XQBpKUkhWuLAkNNUKYexd": {
+      "metaInfo": {
+        "id": "XQBpKUkhWuLAkNNUKYexd",
+        "versionInfo": {
+          "version": "1.0.0"
+        },
+        "name": "End",
+        "description": ""
+      },
+      "mappings": {
+        "End": {
+          "flight_number": "$.gv.TestGVs.first",
+          "passengers": [
+            {
+              "age": "$.gv.TestGVs.second",
+              "__arrayItemName__": "passenger1"
+            }
+          ]
+        }
+      },
+      "attributes": {}
+    }
+  },
+  "notes": [],
+  "config": {
+    "name": "gvRef"
+  }
+}
