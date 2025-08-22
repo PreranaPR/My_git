@@ -4,7 +4,7 @@
   "workflowName": "gvRef",
   "itemType": "workflow",
   "appId": "yKvmezRFjQwAkcaJQwjUQ",
-  "folderId": "BKrWvSwhhJaHEEnQxqybw",
+  "folderId": "smPdEkzbuoLYgRQqnCtoN",
   "type": "ORCHESTRATION",
   "version": "0.0.1",
   "steps": [
@@ -22,8 +22,8 @@
         "activityType": "END",
         "name": "End",
         "sourceSchemas": [
-          "vnCnoQmctPitOzcXMnxNg",
-          "RxXLaYTjsmCohoWjWnsag"
+          "RxXLaYTjsmCohoWjWnsag",
+          "vnCnoQmctPitOzcXMnxNg"
         ],
         "targetSchema": "UhDvoOkxMZLCptgfpKSfT",
         "config.name": "End"
@@ -41,6 +41,7 @@
         "activityName": "RESTService",
         "activityGroup": "HTTP",
         "activityType": "EVENT_SOURCE",
+        "output": "UhDvoOkxMZLCptgfpKSfT",
         "headers": [
           {
             "name": "testHeader",
@@ -68,7 +69,6 @@
         ],
         "queryParams": [],
         "pathParams": [],
-        "output": "",
         "showHttpFormSelectionPanel": false,
         "sourceSchemas": [],
         "config.name": "RESTService"
@@ -83,12 +83,16 @@
       "description": "",
       "deletable": true,
       "config": {
-        "activityType": "SIMPLE",
-        "activityGroup": "Common",
         "activityName": "Response",
+        "activityGroup": "Common",
+        "activityType": "SIMPLE",
         "showHttpFormSelectionPanel": false,
         "name": "Response",
-        "config.name": "Response"
+        "config.name": "Response",
+        "sourceSchemas": [
+          "RxXLaYTjsmCohoWjWnsag"
+        ],
+        "targetSchema": "UhDvoOkxMZLCptgfpKSfT"
       }
     }
   ],
@@ -184,9 +188,36 @@
           "passengers": [
             {
               "age": "$.gv.TestGVs.second",
+              "email": "$.Response.body.passengers[1].email",
+              "ticket_number": "$.Response.body.passengers[1].ticket_number",
               "__arrayItemName__": "passenger1"
             }
           ]
+        }
+      },
+      "attributes": {}
+    },
+    "vnCnoQmctPitOzcXMnxNg": {
+      "metaInfo": {
+        "id": "vnCnoQmctPitOzcXMnxNg",
+        "versionInfo": {
+          "version": "1.0.0"
+        },
+        "name": "Response",
+        "description": ""
+      },
+      "mappings": {
+        "Response": {
+          "body": {
+            "flight_number": "$.RESTService.headers.Accept",
+            "departure": "$.RESTService.headers.Authorization",
+            "arrival": "$.RESTService.headers.Content-Type",
+            "passengers": [
+              {
+                "__arrayItemName__": "passenger1"
+              }
+            ]
+          }
         }
       },
       "attributes": {}
